@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		  * {
+		    margin: 0;
+		    padding: 0;
+		  }
+		
+		  li {
+		    list-style-type: none;
+		  }
+		
+		  .tab {
+		    width: 978px;
+		    margin: 100px auto;
+		  }
+		
+		  .tab_list {
+		    height: 39px;
+		    border: 1px solid #ccc;
+		    background-color: #f1f1f1;
+		  }
+		
+		  .tab_list li {
+		    float: left;
+		    height: 39px;
+		    line-height: 39px;
+		    padding: 0 20px;
+		    text-align: center;
+		    cursor: pointer;
+		  }
+		
+		  .tab_list .current {
+		    background-color: #c81623;
+		    color: #fff;
+		  }
+		
+		  .item_info {
+		    padding: 20px 0 0 20px;
+		  }
+		
+		  .item {
+		    display: none;
+		  }
+		</style>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>		
+		
+		
+		
+		
+	</head>
+	<body>
+		<div class="tab">
+			<div class="tab_list">
+				<ul>
+					<li class="current">1234</li>
+					<li>1234</li>
+					<li>1234</li>
+					<li>1234</li>
+					<li>1234</li>
+				</ul>
+			</div>
+			<div class="tab_con">
+				<div class="item" style="display: block;">1111</div>
+				<div class="item">1111</div>
+				<div class="item">1111</div>
+				<div class="item">1111</div>
+				<div class="item">1111</div>
+				 
+			</div>
+			
+		</div>
+		<script>
+			var tab_list = document.querySelector('.tab_list');
+			var list = tab_list.querySelectorAll('li');
+			
+			var items = document.quertySelectorAll('.item');
+			for (var i=0; i<lis.length; i++) {
+				lis[i].setAttribute('index', i);
+				lis[i].onclick = function () {
+					for (var i=0; i<lis.length; i++) {
+						lis[i].className = '';
+					}
+					this.className = 'current';
+					var index = this.getAttribute('index');
+					for (var i=0; i<items.length; i++) {
+						items[i].style.display = 'none';
+					}
+					items[index].style.display = 'block';
+					
+				};
+				
+			}
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
